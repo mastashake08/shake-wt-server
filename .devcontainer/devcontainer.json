@@ -1,9 +1,6 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/python:3",
   "features": {
-    "ghcr.io/devcontainers/features/python:1":{
-      "version": "3.12"
-    },
     "ghcr.io/devcontainers-contrib/features/mkcert:1": {}
   },
   "forwardPorts": [4433],
@@ -14,8 +11,7 @@
     }
   },
    // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "pip3 install --user -r requirements.txt; mkdir devcerts && mkdir logs; mkcert --install; mkcert -key-file devcerts/key.pem -cert-file devcerts/cert.pem $CODESPACE_NAME-4433.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
-
+  "postCreateCommand": "sh container-install.sh"
   // Configure tool-specific properties.
   // "customizations": {},
 
