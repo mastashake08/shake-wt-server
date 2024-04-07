@@ -1,0 +1,1 @@
+pip3 install --user -r requirements.txt; mkdir devcerts && mkdir logs; mkcert --install; mkcert -key-file devcerts/key.pem -cert-file devcerts/cert.pem $CODESPACE_NAME-4433.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN
